@@ -16,7 +16,7 @@ const initialState = {
 };
 
 const todosReducer = (state = initialState, action) => {
-  debugger
+  // debugger
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch (action.type) {

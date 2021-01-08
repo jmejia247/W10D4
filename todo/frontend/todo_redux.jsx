@@ -3,6 +3,10 @@ import ReactDOM from "react-dom";
 
 import configureStore from './store/store.js'
 import { receiveTodos, receiveTodo } from './actions/todo_actions.js'
+import Root from './components/root.jsx'
+import allTodos from './reducers/selectors';
+
+window.allTodos = allTodos;
 
 const store = configureStore();
 window.store = store;
@@ -11,5 +15,5 @@ window.receiveTodo = receiveTodo;
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root')
-    ReactDOM.render(<h1>Todos App</h1>, root);
+    ReactDOM.render(<Root store={store} />, root);
 });
