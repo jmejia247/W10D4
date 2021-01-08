@@ -4,14 +4,15 @@ import TodoListItem from './todo_list_item'
 import TodoForm from './todo_form'
 
 
-export default ({todos, recieveTodo}) => {
+export default ({todos, receiveTodo, removeTodo}) => {
+    // debugger
     return (<div>
         <ul>
-            {todos.map((ele) => {
-                return <TodoListItem todo={ele} />
+            {todos.map((ele, idx) => {
+                return <TodoListItem todo={ ele } key={ ele.idx } removeTodo={ removeTodo } receiveTodo={ receiveTodo }/>
             })}
         </ul>
-        <TodoForm recieveTodo={recieveTodo}/>
+        <TodoForm receiveTodo={ receiveTodo }/>
 
     </div>)
 }

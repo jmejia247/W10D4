@@ -3,6 +3,6 @@ import todosReducer from './todos_reducer';
 
 const rootReducer = combineReducers({
     todos: todosReducer
-})
+}) // is this a function or initial state
 
 export default rootReducer;
